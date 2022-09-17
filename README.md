@@ -1,7 +1,7 @@
 <h1 align="center"><code>kickstart.zsh</code></h1>
 <p align="center">A launch point for your personal Zsh configuration</p>
 <p align="center">
-  <a href="https://github.com/NNBnh/kickstart.zsh/blob/master/LICENSE"><img src="https://img.shields.io/github/license/NNBnh/kickstart.zsh?labelColor=585858&color=F7CA88&style=for-the-badge" alt="License: GPL-3.0"></a>
+  <a href="https://github.com/NNBnh/kickstart.zsh/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NNBnh/kickstart.zsh?labelColor=585858&color=F7CA88&style=for-the-badge" alt="License: GPL-3.0"></a>
   <a href="https://gist.github.com/NNBnh/9ef453aba3efce26046e0d3119dab5a7#development-completed"><img src="https://img.shields.io/badge/development-completed-%23F7CA88.svg?labelColor=585858&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></a>
 </p>
 
@@ -11,7 +11,21 @@
 
 ## 🚀 Setup
 
+### 🧾 Dependencies
+
+- [`zsh`](https://www.zsh.org)
+- [`curl`](https://curl.se)
+- [`git`](https://git-scm.com)
+
+### 📥 Installation
+
 #TODO
+
+```sh
+curl https://raw.githubusercontent.com/NNBnh/kickstart.zsh/main/.zshrc > ~/.zshrc
+```
+
+> **Warning** #TODO
 
 ## 💌 Credits
 
