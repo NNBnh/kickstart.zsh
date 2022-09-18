@@ -1,3 +1,5 @@
+# Plugins ------------------------------------------------------------------------------------------
+
 # Zplug
 test -f ~/.zplug/init.zsh || git clone https://github.com/zplug/zplug ~/.zplug
 source ~/.zplug/init.zsh
@@ -13,40 +15,62 @@ zplug load
 command -v starship >/dev/null || curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init zsh)"
 
+
+# Environment variables ----------------------------------------------------------------------------
+
 # History
-export HISTSIZE=500000
-export HISTFILE="${HOME}/.history"
-export SAVEHIST="${HISTSIZE}"
+export HISTSIZE=50000
+export SAVEHIST=10000
+export HISTFILE="${HOME}/.zsh_history"
 
-# Settings #TODO
-setopt histreduceblanks # Remove superfluous blanks from each command line being added to the history list.
-setopt histignorespace # Remove command lines from the history list when the first character on the line is a space, or when one of the expanded aliases contains a leading space.
-setopt histignorealldups # Do not enter command lines into the history list if they are duplicates of the previous event.
-setopt autocd # Switching directories for lazy people.
-setopt autopushd pushdminus pushdsilent pushdtohome pushdignoredups # See: http://zsh.sourceforge.net/Intro/intro_6.html
-setopt nohup # Don't kill background jobs when I logout.
-setopt extendedglob # See: http://zsh.sourceforge.net/Intro/intro_2.html
-setopt globdots # Do not require a leading '.' in a filename to be matched explicitly.
-# setopt vi # Use vi key bindings in Zsh.
-# setopt shwordsplit # Causes field splitting to be performed on unquoted parameter expansions.
-setopt automenu # Automatically use menu completion after the second consecutive request for completion.
-setopt cdablevars # If the argument to a cd command (or an implied cd with the AUTO_CD option set) is not a directory, and does not begin with a slash, try to expand the expression as if it were preceded by a '~'.
-setopt listpacked # Try to make the completion list smaller (occupying less lines) by printing the matches in columns with different widths.
-setopt nolisttypes # Don't show types in completion lists.
-setopt alwaystoend # If a completion is performed with the cursor within a word, and a full completion is inserted, the cursor is moved to the end of the word.
-# setopt correct # Try to correct the spelling of commands.
-setopt no_nomatch # https://github.com/robbyrussell/oh-my-zsh/issues/449
-setopt rmstarsilent # Disable annoying confirm
+# #TODO
 
-# Aliases #TODO
+# Options ------------------------------------------------------------------------------------------
+
+# Changing Directories
+setopt auto_cd                   # Cd by enter a directory's path.
+setopt auto_pushd                # Make cd push the old directory onto the directory stack.
+setopt pushd_ignore_dups         # Don’t push multiple copies of the same directory onto the directory stack.
+setopt pushd_minus               # Exchanges the meanings of ‘+’ and ‘-’ when used with a number to specify a directory in the stack.
+
+# History
+setopt extended_history          # Record timestamp of command in HISTFILE.
+setopt hist_expire_dups_first    # Delete duplicates first when HISTFILE size exceeds HISTSIZE.
+setopt hist_ignore_dups          # Ignore duplicated commands history list.
+setopt hist_ignore_space         # Ignore commands that start with space.
+setopt hist_verify               # Show command with history expansion to user before running it.
+setopt share_history             # Share command history data.
+
+# Completion
+setopt always_to_end             # If a completion is performed and a full completion is inserted, the cursor is moved to the end of the word.
+setopt auto_menu                 # Show completion menu on successive tab press.
+setopt complete_in_word          # The cursor isn't set to the end of the word if completion is started.
+
+# Expansion and Globbing
+setopt extended_glob             # Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename generation, etc.
+setopt glob_dots                 # Do not require a leading ‘.’ in a filename to be matched explicitly.
+
+# Misc
+setopt long_list_jobs            # Print job notifications in the long format by default.
+setopt interactive_comments      # Allow comments even in interactive shells.
+
+
+# Aliases ------------------------------------------------------------------------------------------
+
+alias _='sudo'
+alias l='ls -Ah --group-directories-first'
 alias md='mkdir -p'
 alias dl='trash-put'
 alias a='7z'
 alias g='git'
 
+# Functions ----------------------------------------------------------------------------------------
+
+# Ls whenever the current working directory is changed.
+chpwd_ls() { l }
+
 # #TODO
-chpwd() { ls --almost-all --group-directories-first }
 s() { selection=(); for item in "$@"; do selection+=("$(readlink -f "${item}")"); done }
-mv() { if [ "$#" -eq 0 ]; then command mv    "${selection[@]}" .; else command mv    "$@"; fi }
-cp() { if [ "$#" -eq 0 ]; then command cp -r "${selection[@]}" .; else command cp -r "$@"; fi }
-ln() { if [ "$#" -eq 0 ]; then command ln -s "${selection[@]}" .; else command ln -s "$@"; fi }
+mv() { if [ "$#" -eq 0 ]; then command mv -i  "${selection[@]}" .; else command mv -i  "$@"; fi }
+cp() { if [ "$#" -eq 0 ]; then command cp -ir "${selection[@]}" .; else command cp -ir "$@"; fi }
+ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command ln -s  "$@"; fi }
