@@ -18,12 +18,10 @@ eval "$(starship init zsh)"
 
 # Environment variables ----------------------------------------------------------------------------
 
-# History
 export HISTSIZE=50000
 export SAVEHIST=10000
 export HISTFILE="${HOME}/.zsh_history"
 
-# #TODO
 
 # Options ------------------------------------------------------------------------------------------
 
@@ -57,20 +55,20 @@ setopt interactive_comments      # Allow comments even in interactive shells.
 
 # Aliases ------------------------------------------------------------------------------------------
 
-alias _='sudo'
 alias l='ls -Ah --group-directories-first'
 alias md='mkdir -p'
 alias dl='trash-put'
 alias a='7z'
 alias g='git'
 
+
 # Functions ----------------------------------------------------------------------------------------
 
-# Ls whenever the current working directory is changed.
-chpwd_ls() { l }
-
-# #TODO
+# Selection
 s() { selection=(); for item in "$@"; do selection+=("$(readlink -f "${item}")"); done }
 mv() { if [ "$#" -eq 0 ]; then command mv -i  "${selection[@]}" .; else command mv -i  "$@"; fi }
 cp() { if [ "$#" -eq 0 ]; then command cp -ir "${selection[@]}" .; else command cp -ir "$@"; fi }
 ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command ln -s  "$@"; fi }
+
+# Ls whenever the current working directory is changed.
+chpwd_ls() { l }
