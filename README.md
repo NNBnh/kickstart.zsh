@@ -7,7 +7,19 @@
 
 ## 💡 About
 
-#TODO
+**`kickstart.zsh`** is meant to be used as a starting point for a user's own configuration. Remove the things you don't use and add what you miss.
+
+### ✨ Features
+
+- Small single-file config.
+- Fully documented.
+- Manage plugins using [Zplug](https://github.com/zplug/zplug).
+- [Fish](https://fishshell.com) like interactive features:
+  - [Auto Cd](https://zsh.sourceforge.io/Intro/intro_16.html).
+  - [Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting).
+  - [Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions).
+  - [Advanced completion](https://github.com/marlonrichert/zsh-autocomplete).
+- Plus it come with [Starship](https://starship.rs) prompt!
 
 ## 🚀 Setup
 
@@ -16,21 +28,24 @@
 - [`zsh`](https://www.zsh.org)
 - [`curl`](https://curl.se)
 - [`git`](https://git-scm.com)
+- [`coreutils`](https://www.gnu.org/software/coreutils) _(optional)_
+- [`trash-cli`](https://github.com/andreafrancia/trash-cli) _(optional)_
+- [`7z`](https://github.com/jinfeihan57/p7zip) _(optional)_
 
 ### 📥 Installation
 
-#TODO
+Just download the file to `~/.zshrc`:
 
 ```sh
 curl https://raw.githubusercontent.com/NNBnh/kickstart.zsh/main/.zshrc > ~/.zshrc
 ```
 
-> **Warning** #TODO
+> **Warning** The command above will replace existen `~/.zshrc`. So if you want, make a backup Zsh config before running it.
 
 ## 💌 Credits
 
 Special thanks to:
-- [`zsh-config`](https://github.com/ricbra/zsh-config) by [Richard van den Brand](https://github.com/ricbra)
+- [Oh My Zsh](https://ohmyz.sh) by [it's community](https://github.com/ohmyzsh/ohmyzsh/graphs/contributors)
 - [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim) by [Neovim Lua](https://github.com/nvim-lua)
 
 <br><br><br><br>
