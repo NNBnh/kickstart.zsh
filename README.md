@@ -1,4 +1,4 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=67E8F9&fontColor=FEF2F2&height=256&text=Kickstart.zsh&desc=A%20launch%20point%20for%20your%20personal%20Zsh%20configuration"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=header&color=0284C7&fontColor=F0F9FF&height=256&text=Kickstart.zsh&desc=A%20launch%20point%20for%20your%20personal%20Zsh%20configuration"/>
 <p align="center"><a href="https://gist.github.com/NNBnh/9ef453aba3efce26046e0d3119dab5a7#development-completed"><img src="https://img.shields.io/badge/development-completed-%230284C7.svg?labelColor=075985&style=for-the-badge&logoColor=FFFFFF" alt="Development completed"></a></p>
 
 ## 💡 About
@@ -44,4 +44,4 @@ Special thanks to:
 - [Oh My Zsh](https://ohmyz.sh) by [it's community](https://github.com/ohmyzsh/ohmyzsh/graphs/contributors)
 - [`kickstart.nvim`](https://github.com/nvim-lua/kickstart.nvim) by [Neovim Lua](https://github.com/nvim-lua)
 
-<a href="https://github.com/NNBnh"><img width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=footer&color=67E8F9&fontColor=FEF2F2&height=128&desc=Made%20with%20🎔%20by%20NNB&descAlignY=80"/></a>
+<a href="https://github.com/NNBnh"><img width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=footer&color=0284C7&fontColor=F0F9FF&height=128&desc=Made%20with%20🎔%20by%20NNB&descAlignY=80"/></a>
