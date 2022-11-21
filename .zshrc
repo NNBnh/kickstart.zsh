@@ -13,18 +13,15 @@
 
 # Plugins ------------------------------------------------------------------------------------------
 
-# Install Zplug if it haven't already.
-test -f ~/.zplug/init.zsh || git clone https://github.com/zplug/zplug ~/.zplug
-source ~/.zplug/init.zsh
+# Install Zinit if it haven't already.
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+test -f "${ZINIT_HOME}/zinit.zsh" || git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT_HOME}"
+source "${ZINIT_HOME}/zinit.zsh"
 
 # You can find more plugins on https://github.com/unixorn/awesome-zsh-plugins#plugins
-zplug zdharma/fast-syntax-highlighting
-zplug zsh-users/zsh-autosuggestions
-zplug marlonrichert/zsh-autocomplete
-
-# Install plugins if there are plugins that haven't been installed.
-zplug check || zplug install
-zplug load
+zinit light zdharma-continuum/fast-syntax-highlighting
+zinit light zsh-users/zsh-autosuggestions
+zinit light marlonrichert/zsh-autocomplete
 
 # Install Starship if it haven't already.
 command -v starship >/dev/null || curl -sS https://starship.rs/install.sh | sh
