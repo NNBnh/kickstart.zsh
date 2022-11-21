@@ -9,7 +9,7 @@
 
 - Small single-file config.
 - Fully documented.
-- Manage plugins using [Zplug](https://github.com/zplug/zplug).
+- Manage plugins using [Zinit](https://github.com/zdharma-continuum/zinit).
 - [Fish](https://fishshell.com) like interactive features:
   - [Auto Cd](https://zsh.sourceforge.io/Intro/intro_16.html).
   - [Syntax highlighting](https://github.com/zdharma/fast-syntax-highlighting).
