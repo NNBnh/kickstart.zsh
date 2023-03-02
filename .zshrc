@@ -15,7 +15,8 @@
 
 # Install Zinit if it haven't already.
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-test -f "${ZINIT_HOME}/zinit.zsh" || git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT_HOME}"
+test -f "${ZINIT_HOME}/zinit.zsh" \
+|| git clone https://github.com/zdharma-continuum/zinit.git "${ZINIT_HOME}"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # You can find more plugins on https://github.com/unixorn/awesome-zsh-plugins#plugins
@@ -30,10 +31,15 @@ eval "$(starship init zsh)"
 
 # Environment variables ----------------------------------------------------------------------------
 
+# Support XDG Base Directory.
+export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
+compinit -d "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompdump-${ZSH_VERSION}"
+mkdir -p "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache" \
+&& zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache"
+
 # History settings.
 export HISTSIZE=50000
 export SAVEHIST=10000
-export HISTFILE="${HOME}/.zsh_history"
 
 # Set default editor/pager.
 #export EDITOR='nvim'
