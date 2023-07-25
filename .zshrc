@@ -96,6 +96,4 @@ cp() { if [ "$#" -eq 0 ]; then command cp -ir "${selection[@]}" .; else command 
 ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command ln -s  "$@"; fi }
 
 # Ls whenever the current working directory is changed.
-autoload -U add-zsh-hook
-add-zsh-hook -Uz auto_ls() { l }
-
+chpwd_ls() { l; }
