@@ -32,8 +32,8 @@ eval "$(starship init zsh)"
 # Environment variables ----------------------------------------------------------------------------
 
 # Support XDG Base Directory.
-mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/zsh" \
-&& export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
+mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/zsh"
+export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
 compinit -d "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompdump-${ZSH_VERSION}"
 mkdir -p "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache" \
 && zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache"
