@@ -97,4 +97,5 @@ ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command 
 
 # Ls whenever the current working directory is changed.
 autoload -U add-zsh-hook
-chpwd_ls() { l }
+add-zsh-hook -Uz auto_ls() { l }
+
