@@ -32,8 +32,9 @@ eval "$(starship init zsh)"
 # Environment variables ----------------------------------------------------------------------------
 
 # Support XDG Base Directory.
-export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
-mkdir -p "${HISTFILE}"
+mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/zsh" \
+&& export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
+autoload -Uz compinit
 compinit -d "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompdump-${ZSH_VERSION}"
 mkdir -p "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache" \
 && zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache"
@@ -96,4 +97,5 @@ cp() { if [ "$#" -eq 0 ]; then command cp -ir "${selection[@]}" .; else command 
 ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command ln -s  "$@"; fi }
 
 # Ls whenever the current working directory is changed.
+autoload -Uz add-zsh-hook
 chpwd_ls() { l; }
