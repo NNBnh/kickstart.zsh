@@ -52,8 +52,8 @@ export SAVEHIST=10000
 # Changing Directories.
 setopt auto_cd                   # Cd by enter a directory's path.
 setopt auto_pushd                # Make cd push the old directory onto the directory stack.
-setopt pushd_ignore_dups         # Don’t push multiple copies of the same directory onto the directory stack.
-setopt pushd_minus               # Exchanges the meanings of ‘+’ and ‘-’ when used with a number to specify a directory in the stack.
+setopt pushd_ignore_dups         # Don't push multiple copies of the same directory onto the directory stack.
+setopt pushd_minus               # Exchanges the meanings of '+' and '-' when used with a number to specify a directory in the stack.
 
 # History.
 setopt extended_history          # Record timestamp of command in HISTFILE.
@@ -69,8 +69,8 @@ setopt auto_menu                 # Show completion menu on successive tab press.
 setopt complete_in_word          # The cursor isn't set to the end of the word if completion is started.
 
 # Expansion and Globbing.
-setopt extended_glob             # Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename generation, etc.
-setopt glob_dots                 # Do not require a leading ‘.’ in a filename to be matched explicitly.
+setopt extended_glob             # Treat the '#', '~' and '^' characters as part of patterns for filename generation, etc.
+setopt glob_dots                 # Do not require a leading '.' in a filename to be matched explicitly.
 
 # Misc.
 setopt long_list_jobs            # Print job notifications in the long format by default.
