@@ -32,7 +32,7 @@
 Just download the file to `~/.zshrc`:
 
 ```sh
-curl https://raw.githubusercontent.com/NNBnh/kickstart.zsh/main/.zshrc > ~/.zshrc
+curl https://codeberg.org/NNB/kickstart.zsh/raw/branch/main/.zshrc > ~/.zshrc
 ```
 
 > **Warning** The command above will delete existen `~/.zshrc` permanently.
