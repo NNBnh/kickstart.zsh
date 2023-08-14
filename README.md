@@ -1,4 +1,4 @@
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=header&color=0284C7&fontColor=F0F9FF&height=256&text=Kickstart.zsh&desc=A%20launch%20point%20for%20your%20personal%20Zsh%20configuration&descAlignY=66"/>
+<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=header&color=0284C7&fontColor=F0F9FF&height=256&text=Kickstart.zsh&desc=A%20launch%20point%20for%20your%20personal%20Zsh%20configuration&fontAlignY=40"/>
 
 ## 💡 About
 
