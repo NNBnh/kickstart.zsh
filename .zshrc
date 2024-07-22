@@ -28,12 +28,17 @@ zinit light marlonrichert/zsh-autocomplete
 command -v starship >/dev/null || curl -sS https://starship.rs/install.sh | sh
 eval "$(starship init zsh)"
 
+# Install Mise if it haven't already.
+#command -v ~/.local/bin/mise >/dev/null || curl -sS https://mise.run | sh
+#eval "$(~/.local/bin/mise activate zsh)"
+
 
 # Environment variables ----------------------------------------------------------------------------
 
 # Support XDG Base Directory.
 mkdir -p "${XDG_STATE_HOME:-${HOME}/.local/state}/zsh"
 export HISTFILE="${XDG_STATE_HOME:-${HOME}/.local/state}/zsh/history"
+autoload -Uz compinit
 compinit -d "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompdump-${ZSH_VERSION}"
 mkdir -p "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache" \
 && zstyle ':completion:*' cache-path "${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/zcompcache"
@@ -97,3 +102,8 @@ ln() { if [ "$#" -eq 0 ]; then command ln -s  "${selection[@]}" .; else command 
 
 # Ls whenever the current working directory is changed.
 chpwd() { l; }
+
+
+# Startup ------------------------------------------------------------------------------------------
+
+#neofetch
