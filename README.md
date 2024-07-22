@@ -15,6 +15,7 @@
   - [Auto suggestions](https://github.com/zsh-users/zsh-autosuggestions).
   - [Advanced completion](https://github.com/marlonrichert/zsh-autocomplete).
 - Plus it come with [Starship](https://starship.rs) prompt!
+- _And optionally [Mise](https://mise.jdx.dev) dev env!_
 
 ## 🚀 Setup
 
