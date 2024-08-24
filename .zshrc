@@ -51,6 +51,7 @@ export SAVEHIST=10000
 #export EDITOR='nvim'
 #export VISUAL="${EDITOR}"
 
+
 # Options ------------------------------------------------------------------------------------------
 # You can find all available options on https://zsh.sourceforge.io/Doc/Release/Options.html
 
